@@ -25,7 +25,8 @@ export const getStaticProps = async (id?: string) => {
             .then(buffer => fm(buffer.toString()))
             .then(([attr, body]): Post => ({
                 attr: toml(attr),
-                body: converter.makeHtml(body)
+                body: converter.makeHtml(body),
+                rawBody: body
             }))
     })
 }

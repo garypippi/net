@@ -29,6 +29,7 @@
       "plugins": ["jest"],
       "env": {
         "jest": true,
+        "node": true,
         "browser": true
       }
     },
