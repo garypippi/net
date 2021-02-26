@@ -1,6 +1,6 @@
 import * as rules from './rules'
 
-type T = 'nl'|'h'|'p'|'t'|'a'
+type T = 'nl'|'h'|'p'|'t'|'a'|'code'|'fence'
 type U = {type:T,content:string,matches:string[],tokens?:U[]}
 type R = U|null
 type C = RegExpExecArray|null
@@ -24,6 +24,7 @@ export const tuck = (t: U[], u: F[], s: string): U[] => {
 
 export const task: F[][] = [[
     s => f(rules.nl.exec(s), 'nl'),
+    s => f(rules.fence.exec(s), 'fence'),
     s => f(rules.p.exec(s), 'p')
     // s => f(rules.paragraph.exec(s), 'paragraph'),
     // () => null
