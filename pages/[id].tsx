@@ -18,6 +18,7 @@ interface Props {
 
 
 const idPage = ({ post }: Props) => {
+    // console.log(post.rawBody)
     console.log(lexer(post.rawBody))
     console.log(marked.lexer(post.rawBody))
     return (
