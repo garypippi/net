@@ -1,3 +1,5 @@
 export { nl } from './nl'
 export { p } from './p'
 export { a } from './a'
+export { t } from './t'
+export { code } from './code'

@@ -6,6 +6,7 @@ export const lexer = (input: string): Token[] => {
         .map(token => ({
             ...token,
             tokens: tick([], task[1], token.content)
+                .filter(token => token.content.trim().length > 0)
         }))
     // return tick(t, u, input)
     //     .filter(token => token.content.trim().length > 0)

@@ -13,7 +13,7 @@ const g = (t: R, u: U[]) => u.length - (t ? u.push(t) : u.length)
 
 export const tick = (t: U[], u: F[], s: string): U[] => {
     return u.some(f => g(f(s), t))
-        ? tuck(t, u, s = s.substring(t[t.length-1].content.length))
+        ? tuck(t, u, s.substring(t[t.length-1].content.length))
         : t
 }
 export const tuck = (t: U[], u: F[], s: string): U[] => {
@@ -24,11 +24,13 @@ export const tuck = (t: U[], u: F[], s: string): U[] => {
 
 export const task: F[][] = [[
     s => f(rules.nl.exec(s), 'nl'),
-    s => f(rules.p.exec(s), 'p'),
+    s => f(rules.p.exec(s), 'p')
     // s => f(rules.paragraph.exec(s), 'paragraph'),
-    () => null
+    // () => null
 ], [
+    s => f(rules.code.exec(s), 'code'),
     s => f(rules.a.exec(s), 'a'),
+    s => f(rules.t.exec(s), 't')
     // s => f(rules.text.exec(s), 'text'),
-    () => null
+    // () => null
 ]]
