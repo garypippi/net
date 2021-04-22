@@ -9,7 +9,7 @@ import { id, getStaticPropsWithInitialState } from '../modules/ss'
 import { Post } from '../types'
 import 'highlight.js/styles/atom-one-dark.css'
 import { lexer } from '../modules/md/lexer'
-import marked from 'marked'
+// import marked from 'marked'
 
 
 interface Props {
@@ -20,7 +20,7 @@ interface Props {
 const idPage = ({ post }: Props) => {
     // console.log(post.rawBody)
     console.log(lexer(post.rawBody))
-    console.log(marked.lexer(post.rawBody))
+    // console.log(marked.lexer(post.rawBody))
     return (
         <App>
             <AppHeader title={post.attr.title}>garypippi.net</AppHeader>
